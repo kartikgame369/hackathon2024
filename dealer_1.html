@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Dealer Registration</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  .error {
+    color: red;
+  }
+</style>
+<script>
+  function validateForm() {
+    var name = document.getElementById("dealerName").value;
+    var email = document.getElementById("dealerEmail").value;
+    var phone = document.getElementById("dealerPhone").value;
+    var address = document.getElementById("dealerAddress").value;
+    var city = document.getElementById("dealerCity").value;
+    var state = document.getElementById("dealerState").value;
+    var zip = document.getElementById("dealerZip").value;
+    var brand = document.getElementById("dealerBrand").value;
+
+    if (name === "" || email === "" || phone === "" || address === "" || city === "" || state === "" || zip === "" || brand === "") {
+      alert("All fields are required");
+      return false;
+    }
+    return true;
+  }
+</script>
+</head>
+<body>
+
+<h2>New Dealer Registration Form</h2>
+
+<form action="#" method="post" onsubmit="return validateForm()">
+  <label for="dealerName">Dealer Name:</label>
+  <input type="text" id="dealerName" name="dealerName" required>
+
+  <label for="dealerEmail">Email:</label>
+  <input type="email" id="dealerEmail" name="dealerEmail" required>
+
+  <label for="dealerPhone">Phone Number:</label>
+  <input type="tel" id="dealerPhone" name="dealerPhone" pattern="[0-9]{10}" required>
+
+  <label for="dealerAddress">Address:</label>
+  <textarea id="dealerAddress" name="dealerAddress" rows="4" required></textarea>
+
+  <label for="dealerCity">City:</label>
+  <input type="text" id="dealerCity" name="dealerCity" required>
+
+  <label for="dealerState">State:</label>
+  <input type="text" id="dealerState" name="dealerState" required>
+
+  <label for="dealerZip">Zip Code:</label>
+  <input type="text" id="dealerZip" name="dealerZip" pattern="[0-9]{5}" required>
+
+  <label for="dealerBrand">Preferred Vehicle Brand:</label>
+  <input type="text" id="dealerBrand" name="dealerBrand" required>
+
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
